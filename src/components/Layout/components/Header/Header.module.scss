@@ -1,5 +1,8 @@
+$search-border-radius: 92px;
+$height-search: 46px;
 .wrapper {
   height: var(--header-height);
+  width: 100%;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12);
   display: flex;
   justify-content: center;
@@ -7,4 +10,80 @@
 .container {
   height: 100%;
   width: var(--layout-default-width);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  width: 118px;
+  height: 60px;
+  & img {
+    height: 100%;
+  }
+}
+.search {
+  position: relative;
+  width: 415px;
+  height: $height-search;
+  background-color: rgba(22, 24, 35, 0.06);
+  border-radius: $search-border-radius;
+  padding-left: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1.5px solid transparent;
+  &::after {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 28px;
+    background-color: rgba(22, 24, 35, 0.12);
+    top: calc((($height-search) - 28px) / 2);
+    right: 52px;
+  }
+  &:focus-within {
+    // Khi thẻ input bên trong focus thì hiện border
+    border-color: rgba(22, 24, 35, 0.2);
+  }
+  &-input {
+    font-size: 1.6rem;
+    color: rgb(22, 24, 35);
+    line-height: 2.2rem;
+    padding: 12px 0;
+    background-color: transparent;
+    caret-color: var(--primary-color);
+    flex: 1;
+  }
+  &-btn {
+    width: 52px;
+    height: 100%;
+    border-top-right-radius: $search-border-radius;
+    border-bottom-right-radius: $search-border-radius;
+    font-size: 1.8rem;
+    color: rgba(22, 24, 35, 0.34);
+    &:hover {
+      background-color: rgba(22, 24, 35, 0.03);
+    }
+    &:active {
+      background-color: rgba(22, 24, 35, 0.06);
+    }
+  }
+  &-input:not(:placeholder-shown) ~ &-btn {
+    color: rgba(0, 0, 0, 0.75);
+  }
+  &-clear {
+    position: absolute;
+    color: rgba(22, 24, 35, 0.34);
+    top: 50%;
+    transform: translateY(-50%);
+    right: 69px;
+  }
+  &-loading {
+    position: absolute;
+    color: rgba(22, 24, 35, 0.34);
+    top: 50%;
+    transform: translateY(-50%);
+    right: 68px;
+  }
 }

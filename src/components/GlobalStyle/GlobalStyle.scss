@@ -6,6 +6,7 @@
   --primary-color: #fe2c55;
   --header-height: 60px;
   --layout-default-width: 1150px;
+  --color-text: rgb(22, 24, 35);
 }
 
 *,
@@ -23,4 +24,30 @@ body {
   font-size: 1.6rem;
   line-height: 1.5;
   text-rendering: optimizeSpeed;
+  color: var(--color-text);
+}
+input,
+textarea,
+select,
+button {
+  outline: none;
+  border: none;
+}
+input {
+  line-height: normal;
+}
+label,
+button {
+  cursor: pointer;
+}
+ul {
+  list-style: none;
+}
+a[href] {
+  color: var(--color-text);
+  text-decoration: none;
+}
+img {
+  display: inline-block;
+  max-width: 100%;
 }
