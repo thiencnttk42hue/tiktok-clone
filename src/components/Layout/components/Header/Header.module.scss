@@ -55,6 +55,9 @@ $height-search: 46px;
     caret-color: var(--primary-color);
     flex: 1;
   }
+  &-result {
+    width: 415px;
+  }
   &-btn {
     width: 52px;
     height: 100%;
@@ -85,5 +88,12 @@ $height-search: 46px;
     top: 50%;
     transform: translateY(-50%);
     right: 68px;
+  }
+  &-title {
+    padding: 5px 12px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    color: rgba(22, 24, 35, 0.5);
   }
 }
